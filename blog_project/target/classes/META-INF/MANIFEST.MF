@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Implementation-Title: blog_project
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: THALA
+Implementation-Vendor-Id: com.blog
+Build-Jdk: 1.8.0_162
+Implementation-URL: http://projects.spring.io/spring-boot/blog_project
+ /
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
+
