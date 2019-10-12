@@ -1,0 +1,108 @@
+.active-cyan-2 input[type=text]:focus:not([readonly]) {
+	border-bottom: 1px solid #4dd0e1;
+	box-shadow: 0 1px 0 0 #4dd0e1;
+	}
+
+.rember-me {
+	vertical-align: bottom;
+	display: inline-block;
+}
+
+.img-height-35 {
+	height: 30px;
+}
+
+.btn-float-right {
+	float: right;
+}
+
+.pad-top-80 {
+	padding-top: 80px;
+}
+
+.mar-left-9 {
+	margin-left: 9px;
+}
+
+.mar-bottom-neg-3 {
+	margin-bottom: -3px;
+}
+
+.font-size-23 {
+	font-size: 23px;
+}
+
+.user-profile-image {
+	border-radius: 50%;
+ }
+
+.username-font-color{
+	color:whitesmoke;
+ }
+
+ .footer {
+	position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: white;
+	text-align: center;
+	background: #212529;
+	border: 1px solid rgb(255, 0, 0)
+  }
+  
+.advertisement-img{
+    height: 515px;
+    width: 240px;
+  }
+  
+img.avatar {
+	width: 20%;
+	border-radius: 50%;
+  }
+
+
+.imgcontainer {
+	text-align: center;
+	margin: 24px 0 12px 0;
+  }
+
+.searchbar{
+background:  black;
+border: none;
+bottom: 0;
+box-sizing: border-box;
+left: 0;
+margin: 0;
+outline: none;
+padding: 0 8px;
+position: absolute;
+top: 10px;
+width: 100%;
+}
+}
+
+/*-------------navbar--------------- */
+.nav{
+	background:white;
+	padding: 0 2rem;
+	height: 0rem;
+	min-height: 30vh;
+}
+
+.nav.nav-menu{
+	justify-content:space-between;  
+}
+
+.nav.nav-items{
+	display: flex;
+
+}
+
+
+/*-----x--------navbar---------x------ */
+
+/* .placeholder {
+	color: white;
+  }
+   */
