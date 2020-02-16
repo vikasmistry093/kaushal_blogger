@@ -5,10 +5,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
 @SpringBootApplication
-public class LicWebApplication {
+public class BlogWebApplication {
 
 	public static void main(String[] args) {
-        SpringApplication.run(LicWebApplication.class, args);
+        SpringApplication.run(BlogWebApplication.class, args);
     }
 	
 }

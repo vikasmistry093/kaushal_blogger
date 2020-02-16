@@ -1,53 +1,55 @@
 <html>
 <head>
-
-<link href="resources/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-<link href="resources/css/mystyle.css" rel="stylesheet" type="text/css" />
-<script src="resources/js/jquery.min.js"></script>
-<script src="resources/js/popper.min.js"></script>
-<script src="resources/js/bootstrap.min.js"></script>
+<%@include file="imports.jsp"%>
 
 <meta charset="UTF-8">
 <title>MyFirstBlog | Contact</title>
 </head>
+<%@ include file="header.jsp"%>
 
-<body background="resources/images/background-main.jpg">
-	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-		<!-- Brand/logo -->
-		<img class="img-height-35" src="resources/images/logo/logo.jpg" />
-		<!-- <a class="navbar-brand" href="#">Blogger</a> -->
-    </nav>
-    
+<body background="/images/background-main27.png">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-3"></div>
 
-    <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-4"></div> 
-        
-    <p><h1>Send any questions,<br>
-        ideas and suggestions.</h1>
-    </p>
-   
+			<div class="pad-top-70 col-md-6">
+				<form action="#">
+					<h1>&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Say Hello</h1>
+					<h2>&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;We are always ready
+						to serve you!</h2>
+					<br>
 
-    <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-4"></div> 
-                
-        
-    <p>We will update in 5 mins.... </p>
-    <br>
-    <!-- <a href="mailto" -->
-        <br>
-        <br>
+					<div class="form-group">
+						<label><b> Name :</b></label> <input type="text"
+							class="form-control" placeholder="Enter Your Name " required>
+					</div>
 
-        <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-4"></div> 
+					<div class="form-group">
+						<label><b>Email :</b></label> <input type="email"
+							class="form-control" placeholder="Email (eg: abc@gmail.com)"
+							required>
+					</div>
 
-            <!-- E-mail:
-            <input type="email" name="email"> &nbsp;&nbsp;&nbsp;&nbsp;
-            <input type="submit" value="Submit"> -->
+					<div class="form-group">
+						<label><b>Comment or Message :</b></label>
+						<textarea name="message" class="form-control"
+							placeholder="Write Your suggestions....." rows="4" required></textarea>
+					</div>
 
-            <a href="mailto:mistrykaushal097@gmail.com">Send Feedback</a>
-    
+
+					<!-- <textarea name="message" class="form-control" placeholder="Message" rows="4" required></textarea> -->
+					<br> <input type="submit" class="form-contol submit"
+						value="SEND MESSAGE">
+				</form>
+			</div>
+
+			<div class="col-md-3"></div>
+		</div>
+	</div>
+
 </body>
 </html>
+
+
+

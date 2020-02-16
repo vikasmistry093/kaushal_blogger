@@ -1,7 +1,176 @@
-.active-cyan-2 input[type=text]:focus:not([readonly]) {
-	border-bottom: 1px solid #4dd0e1;
-	box-shadow: 0 1px 0 0 #4dd0e1;
-	}
+
+.footer p {
+	display: inline;
+}
+
+
+.write-blog-reset-btn{
+		position: absolute;
+		bottom: -57px;
+		left: 17px;
+	
+}
+
+/*-------------FOOTER--------------- */
+.footer{
+	background: #303036;
+	height: 395px;
+	position: relative;
+}
+
+
+
+.footer .footer-bottom{
+	background: #2b2c2e;
+	color: #141414;
+	height: 50px;
+	text-align: center;
+	bottom: 0px;
+	left: 0px;
+	padding-top: 20px;
+	position: inherit;
+    bottom: -340px;
+}
+
+   /*-------------FOOTER--------------- */
+
+
+
+.justify-content-center{
+	position: relative;
+    top: 7px;
+    text-align: center;
+}
+
+.nav-searchbar-align-success2 {
+    padding-left: 217px;
+    padding-top: 10px;
+}
+
+.nav-searchbar-align-contact{
+    padding-left: 217px;
+    padding-top: 10px;
+}
+
+
+.chnge-email-placeholder{
+	position: relative;
+    top: 5px;
+
+}
+
+
+.chnge-email-submit-btn{
+	position: absolute;
+    right: 487px;
+    top: 407px;
+}
+
+.change-pswd-placeholder{
+	position: relative;
+    top: 5px;
+
+}
+
+.change-pswd-submit-btn{
+	position: absolute;
+    right: 487px;
+    top: 407px;
+
+}
+
+
+.success{
+	position: absolute;
+    right: 307px;
+    top: 147px;
+    color: floralwhite;
+}
+
+.nav-user-name-dropname{
+	position: inherit;
+    left: 77px;
+}
+
+.next-home-button{
+	position: absolute;
+    left: 370px;
+}
+
+.previous-home-button{
+	position: absolute;
+    left: 300px;
+}
+
+.success-login-btn{
+	position: absolute;
+    top: 227px;
+    right: 607px;
+}
+
+.error-login-btn{
+	position: absolute;
+    right: 297px;
+	top: 183px;
+}
+
+.border{
+	padding: 10px;
+	border-style: solid;
+	border-width: 10px;
+}
+
+/* .border-10{
+	border-style:solid;
+	 border-width: 10px;
+	} */
+
+.error{
+	position: absolute;
+ 	right: 127px;
+	top: 100px;
+	left: 277px;
+	color: white;
+}
+
+
+.success {
+	position: absolute;
+    right: 477px;
+    top: 147px;
+    color: white;
+	
+}
+
+/*------------- PREVIOUS and NEXT BUTTON --------------- */
+
+a {
+	text-decoration: none;
+	display: inline-block;
+	padding: 8px 16px;
+  }
+
+  a:hover {
+	background-color: #ddd;
+	color: black;
+  }
+  
+.previous {
+	background-color: #4CAF50;
+	color: black;
+  }
+
+  .next {
+	background-color: #4CAF50;
+	color: black;
+  }
+
+  .round {
+	border-radius: 50%;
+  }
+
+  /*-------------PREVIOUS and NEXT BUTTON --------------- */
+  
 
 .rember-me {
 	vertical-align: bottom;
@@ -18,6 +187,9 @@
 
 .pad-top-80 {
 	padding-top: 80px;
+}
+.pad-top-50 {
+	padding-top: 50px;
 }
 
 .mar-left-9 {
@@ -36,24 +208,17 @@
 	border-radius: 50%;
  }
 
+ .comment-user-profile-image{
+	border-radius: 50%;
+ }
+
 .username-font-color{
 	color:whitesmoke;
  }
 
- .footer {
-	position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    color: white;
-	text-align: center;
-	background: #212529;
-	border: 1px solid rgb(255, 0, 0)
-  }
-  
 .advertisement-img{
     height: 515px;
-    width: 240px;
+    width: 297px;
   }
   
 img.avatar {
@@ -67,6 +232,15 @@ img.avatar {
 	margin: 24px 0 12px 0;
   }
 
+
+.blogs-image{
+	width: 135px;
+    height: 91px;
+}  
+
+.blogs-card-height{
+	height: 139px;
+}
 .searchbar{
 background:  black;
 border: none;
@@ -79,7 +253,8 @@ padding: 0 8px;
 position: absolute;
 top: 10px;
 width: 100%;
-}
+padding: initial;
+text-align: center;
 }
 
 /*-------------navbar--------------- */
@@ -98,11 +273,44 @@ width: 100%;
 	display: flex;
 
 }
-
-
 /*-----x--------navbar---------x------ */
 
-/* .placeholder {
-	color: white;
-  }
-   */
+
+/* Alignment of search bar on nav  */
+.nav-searchbar-align{
+	padding-left: 177px;
+	padding-top: 10px;
+}
+
+/* length of search text field */
+.searchbar-textfield-length{
+	padding-right: 353px;
+	padding-top: 9px;
+}
+
+form .submit{
+	background: black;
+	border-color: transparent;
+	color: orangered;
+	font-size: 20px;
+	font-weight: bold;
+	letter-spacing: 2px;
+	height: 50px;
+	margin-top: 20px;
+	position: absolute;
+    left: 237px;
+
+}
+
+form .submit:hover{
+	background-color:grey;
+	cursor: pointer;
+} 
+
+img .carousle-image {
+  height: 300px;
+  width: 2000px;
+}
+
+
+

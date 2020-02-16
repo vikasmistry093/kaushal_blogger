@@ -29,7 +29,7 @@ public class Users {
 	private String emailId;
 	
 	@Column(name="phone")
-	private int phoneNo;
+	private long phoneNo;
 	
 	@Column(name="user_password")
 	private String userPassword;
@@ -79,10 +79,10 @@ public Users() {}
 	public void setEmailId(String emailId) {
 		this.emailId = emailId;
 	}
-	public int getPhoneNo() {
+	public long getPhoneNo() {
 		return phoneNo;
 	}
-	public void setPhoneNo(int phoneNo) {
+	public void setPhoneNo(long phoneNo) {
 		this.phoneNo = phoneNo;
 	}
 	public String getUserPassword() {
