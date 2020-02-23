@@ -24,7 +24,7 @@ public class BlogDAOImpl implements BlogDAO {
 	@Override
 	public List<Blogs> getAllBlogs() {
 		Session session = sessionFactory.openSession();
-		List<Blogs> list= session.createCriteria(Blogs.class).list();
+		List<Blogs> list= session.createCriteria(Blogs.class).list().subList(0, 2);
         return list;
 	}
 
@@ -100,6 +100,19 @@ public class BlogDAOImpl implements BlogDAO {
 
 	
 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	/*public void createNewBlog(WriteBlogs writeBlogs) {
 		System.out.println("Inside DAO func - create New Blog");

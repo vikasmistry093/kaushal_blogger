@@ -32,7 +32,7 @@
 									</div>
 									<div class="col-md-9">
 										<h4>${blog.title}</h4>
-										<p class="card-text">${fn:substring(blog.description, 0, 20)}...</p>
+										<p class="card-text">${fn:substring(blog.description, 0, 50)}...</p>
 										<a href="/viewblog/${blog.blogId}" class="btn btn-primary btn-float-right">View
 											Blog</a>
 									</div>
@@ -48,7 +48,7 @@
 				</c:if>
 			</div>
 			<div class="col-md-3 pad-top-50">
-				<img class="advertisement-img" src="/images/advertise-image2.png">
+				<img class="advertisement-img" src="/images/advertise-image1.jpeg">
 			</div>
 		</div>
 	</div>

@@ -23,9 +23,8 @@
 			<div class="pad-top-80 col-md-4">
 
 				<h1 style="color: whitesmoke; text-align: center;">Change Password</h1>
-				<a href="#"> <img
+				<a href="/changepassword"> <img
 					src="${pageContext.request.contextPath}/images/logo/Change Password.png"
-					alt="HTML tutorial"
 					style="width: 367px; height: 337px; border: 0; border-radius: 15px;">
 				</a>
 			</div>

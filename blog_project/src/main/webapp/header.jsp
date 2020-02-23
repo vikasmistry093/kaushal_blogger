@@ -23,14 +23,12 @@
 					<a class="dropdown-item" href="/writeblog">Write Your Blog</a> <a
 						class="dropdown-item" href="/setting">My Profile</a> <a
 						class="dropdown-item" href="#">My Bolgs</a> <a
-						class="dropdown-item" href="/logout">Logout</a>
+						class="dropdown-item" href="/login">Logout</a>
 				</div></li>
 		</c:if>
 		<c:if test="${user == null}">
-			<li class="nav-item dropdown"><a
-				class=" nav-user-name-dropname nav-link dropdown-toggle"
-				href="/login"> <label
-					class="text-info">Login</label>
+			<li class="nav-item dropdown"><a href="/login"
+				style="position: inherit; left: 77px;"> <label class="text-info">Login</label>
 			</a></li>
 		</c:if>
 

@@ -13,43 +13,37 @@
 <body background="/images/background-main27.png">
 	<div class="container-fluid">
 		<div class="row">
-			<div class=" pad-top-50 col-md-4">
-				<!-- <h1 style="color:whitesmoke;text-align:center;">This is a heading</h1>
-                        <a href="#">
-                                <img src="/home/kaushal/D Drive/Blogging Images/Setting Page Images/Change Email.png" alt="HTML tutorial" style="width:367px;height:337px;border:0;">
-                              </a> -->
 
-			</div>
-
+			<div class=" pad-top-50 col-md-4"></div>
+	
 			<div class="pad-top-50 col-md-4">
-				<h1 style="color: whitesmoke; text-align: center;">This is a
-					heading</h1>
+				<h1 style="color: whitesmoke; text-align: center;">Change Password</h1>
 				<br>
-
+				<form:form action="updatePassword" class=" border border-dark black"
+					modelAttribute="formData" onsubmit="return validatePassword()" method="GET">
 				<div class="form-group">
-					<label>Current Password :</label> <input type="password"
-						class="form-control" placeholder="Enter Current Password" required>
+					
+				</div>	
+					
+				<div class="form-group">
+					<label>Current Password :</label> 
+					<form:input type="password" class="form-control" path="currentPassword" id = "currentPwd" placeholder="Enter Current Password" required="required" />
 				</div>
 
 				<div class="form-group">
-					<label> New Password :</label> <input type="password"
-						class="form-control" placeholder="Enter New Password" required>
+					<label> New Password :</label> 
+					<form:input type="password" class="form-control" path="newPassword" id = "newPwd" placeholder="Enter New Password" required="required" />
 				</div>
 
-				<button type="submit" class="btn btn-primary ">Clear</button>
-				<button type="button" class="btn-float-right btn btn-primary ">submit</button>
+				<button type="reset" class="btn btn-primary">Reset</button>	
+				<button type="submit" class="btn-float-right btn btn-primary">Submit</button>
+				
+				</form:form>
 
 			</div>
 
+			<div class="pad-top-50 col-md-4"></div>
 
-
-			<div class="pad-top-50 col-md-4">
-				<!-- <h1 style="color:whitesmoke;text-align:center;">This is a heading</h1>
-                        <a href="#">
-                                <img src="/home/kaushal/D Drive/Blogging Images/Setting Page Images/visit-my-blog.jpg" alt="HTML tutorial" style="width:367px;height:337px;border:0;">
-                              </a> -->
-
-			</div>
 		</div>
 	</div>
 

@@ -7,7 +7,7 @@
 </head>
 <%@ include file="header.jsp"%>
 
-<body background="/images/background-main20.jpg">
+<body background="/images/background-main27.png">
 
 	<div class="container-fluid">
 		<div class="row">
