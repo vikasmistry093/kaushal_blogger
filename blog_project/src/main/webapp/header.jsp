@@ -21,15 +21,16 @@
 			</a>
 				<div class=" dropdown-menu">
 					<a class="dropdown-item" href="/writeblog">Write Your Blog</a> <a
-						class="dropdown-item" href="/setting">My Profile</a> <a
+						class="dropdown-item" href="/setting">Settings</a> <a
 						class="dropdown-item" href="#">My Bolgs</a> <a
 						class="dropdown-item" href="/login">Logout</a>
 				</div></li>
 		</c:if>
 		<c:if test="${user == null}">
-			<li class="nav-item dropdown"><a href="/login"
-				style="position: inherit; left: 77px;"> <label class="text-info">Login</label>
+			<li class="nav-item dropdown ">
+			<a href="/login" style="position: inherit; left: 57px;"> <label class="text-info"> Login</label>
 			</a></li>
+			
 		</c:if>
 
 	</ul>

@@ -14,6 +14,7 @@ import com.blog.dao.BlogDAO;
 import com.blog.model.Blogs;
 import com.blog.model.Category;
 import com.blog.model.Images;
+import com.blog.model.ModelFormData;
 import com.blog.model.Users;
 import com.blog.model.WriteBlogs;
 import com.blog.service.BlogService;
@@ -121,5 +122,50 @@ public class BlogServiceImpl implements BlogService {
 		Blogs newBlog = blogDAO.getBlogById(id); 
 		return newBlog;
 	}
+
+	@Override
+	public Users newPassword(Users user) {
+		System.out.println("Inside Blog Service Imp func - new password");
+		Users newPassword = blogDAO.getNewPassword(user);
+		
+		return newPassword;
+	}
+
+	@Override
+	public boolean isCheckCurrentPassword(Users user, ModelFormData formData) {
+		System.out.println("Inside service for checkCurrentPassword");
+		
+		Users currentUser = blogDAO.isCheckCurrentPassword(user.getEmailId(),formData.getCurrentPassword());
+		
+		if(currentUser != null) {
+			user.setUserPassword(formData.getNewPassword());
+			
+			blogDAO.updateNewPassword(user);
+			System.out.println("Password Updated");
+			return true;
+		}
+		
+		return false;
+	}
+
+	@SuppressWarnings("unused")
+	@Override
+	public boolean isEmailUpdated(Users newUser) {
+		System.out.println("Inside service for checkNewEmail");
+		
+		Users newUsers = blogDAO.isEmailUpdated(newUser.getEmailId());
+		
+		if (newUser != null) {
+			newUser.setEmailId(newUser.getEmailId());
+			
+			blogDAO.updatedEmail(newUser);
+			System.out.println("Email Updated");
+			return true;
+			
+		}
+		
+		return false;
+	}
+
 	
 }

@@ -14,43 +14,28 @@
 
 	<div class="container-fluid">
 		<div class="row">
-			<div class=" pad-top-50 col-md-4">
-				<!-- <h1 style="color:whitesmoke;text-align:center;">This is a heading</h1>
-				<a href="#">
-						<img src="/home/kaushal/D Drive/Blogging Images/Setting Page Images/Change Email.png" alt="HTML tutorial" style="width:367px;height:337px;border:0;">
-					  </a> -->
-
-			</div>
+			<div class=" pad-top-50 col-md-4"></div>
 
 			<div class="pad-top-50 col-md-4">
-				<h1 style="color: whitesmoke; text-align: center;">This is a
-					heading</h1>
+				<h1 style="color: black; text-align: center;">Change Email</h1>
 				<br>
 
-				<div class="form-group">
-					<label> Current Email :</label> <input type="email"
-						class="form-control" placeholder="Enter Current Email" required>
-				</div>
+				<form:form action="updateEmail" class=" border border-dark black"
+					modelAttribute="user" method="GET">
 
-				<div class="form-group">
-					<label> New Email :</label> <input type="email"
-						class="form-control" placeholder="Enter New Email" required>
-				</div>
+					<div class="form-group">
+						<label> Enter New Email :</label>
+						<form:input type="email" class="form-control" path ="emailId"
+							placeholder="Enter New Email" required="required" />
+					</div>
 
-				<button type="submit" class="btn btn-primary ">Clear</button>
-				<button type="button" class="btn-float-right btn btn-primary ">submit</button>
+					<button type="reset" class="btn btn-primary ">Reset</button>
+					<button type="submit" class="btn-float-right btn btn-primary ">Submit</button>
 
-			</div>
-
-
-
-			<div class="pad-top-50 col-md-4">
-				<!-- <h1 style="color:whitesmoke;text-align:center;">This is a heading</h1>
-				<a href="#">
-						<img src="/home/kaushal/D Drive/Blogging Images/Setting Page Images/visit-my-blog.jpg" alt="HTML tutorial" style="width:367px;height:337px;border:0;">
-					  </a> -->
+				</form:form>
 
 			</div>
+			<div class="pad-top-50 col-md-4"></div>
 		</div>
 	</div>
 

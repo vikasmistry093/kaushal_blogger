@@ -22,6 +22,15 @@ public interface BlogDAO {
 
 	public Blogs getBlogById(int id);
 
-	
+	public Users getNewPassword(Users user);
+
+	public Users isCheckCurrentPassword(String emailId, String currentPassword);
+
+	public void updateNewPassword(Users user);
+
+	public Users isEmailUpdated(String emailId);
+
+	public void updatedEmail(Users newUser);
+
 
 }

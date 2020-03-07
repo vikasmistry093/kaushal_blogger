@@ -5,6 +5,7 @@ public class ModelFormData {
 	private String currentPassword;
 	private String newPassword;
 	
+	
 	public String getCurrentPassword() {
 		return currentPassword;
 	}
@@ -22,4 +23,8 @@ public class ModelFormData {
 	public String toString() {
 		return "ModelFormData [currentPassword=" + currentPassword + ", newPassword=" + newPassword + "]";
 	}
+	
+
+	
+	
 }

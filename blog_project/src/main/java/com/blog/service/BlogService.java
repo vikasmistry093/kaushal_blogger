@@ -3,6 +3,7 @@ package com.blog.service;
 import java.util.List;
 
 import com.blog.model.Blogs;
+import com.blog.model.ModelFormData;
 import com.blog.model.Users;
 import com.blog.model.WriteBlogs;
 
@@ -19,5 +20,11 @@ public interface BlogService {
 	public Users validateUserForSign(Users user);
 	
 	public Blogs getBlogById(int id);
+
+	public Users newPassword(Users user);
+
+	public boolean isCheckCurrentPassword(Users user,ModelFormData formData);
+
+	public boolean isEmailUpdated(Users newUser);
 
 }

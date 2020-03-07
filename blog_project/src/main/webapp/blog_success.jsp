@@ -4,7 +4,7 @@
 <%@include file="imports.jsp"%>
 
 <meta charset="UTF-8">
-<title>MyFirstBlog | Success2</title>
+<title>MyFirstBlog | Blog_Success</title>
 </head>
 <%@ include file="header.jsp"%>
 <body background="/images/background-main27.png">
@@ -15,9 +15,12 @@
 		</div>
 	</div>
 
-	<h1 class="success">
+	<h2 class="success" style="position: absolute;
+    right: 377px;
+    top: 147px;
+    color: black;">
 		<b>SUCCESSFULLY POSTED YOUR BLOG</b>
-	</h1>
+	</h2>
 	
 <button class="success-login-btn btn btn-primary" onclick="location.href ='/home'" >Back to Home</button>
 

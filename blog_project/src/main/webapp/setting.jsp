@@ -12,7 +12,7 @@
 		<div class="row">
 			<div class="pad-top-80 col-md-4">
 				<h1 style="color: whitesmoke; text-align: center;">Change Email</h1>
-				<a href="#"> <img
+				<a href="/changeemail"> <img
 					src="${pageContext.request.contextPath}/images/logo/Change Email.png"
 					alt="HTML tutorial"
 					style="width: 367px; height: 337px; border: 0; border-radius: 15px;">

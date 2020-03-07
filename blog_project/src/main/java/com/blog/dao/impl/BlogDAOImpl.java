@@ -24,7 +24,7 @@ public class BlogDAOImpl implements BlogDAO {
 	@Override
 	public List<Blogs> getAllBlogs() {
 		Session session = sessionFactory.openSession();
-		List<Blogs> list= session.createCriteria(Blogs.class).list().subList(0, 2);
+		List<Blogs> list= session.createCriteria(Blogs.class).list().subList(0, 3);
         return list;
 	}
 
@@ -98,31 +98,67 @@ public class BlogDAOImpl implements BlogDAO {
 		return blog;
 	}
 
-	
+	@Override
+	public Users getNewPassword(Users user) {
+		System.out.println("Inside DAO func - getNewPassword" + user);
+				
+		Session session = sessionFactory.openSession();
+		Query query = session.createQuery("from Users where  userPassword = :password");
+		query.setString("password", user.getUserPassword());
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	/*public void createNewBlog(WriteBlogs writeBlogs) {
-		System.out.println("Inside DAO func - create New Blog");
+		Users newPassword = (Users) query.uniqueResult();
+		return newPassword;
+	}
+
+	@Override
+	public Users isCheckCurrentPassword(String emailId, String currentPassword) {
+		System.out.println("Inside DAO for checkCurrentPassword");
+		Session session = sessionFactory.openSession();
+		Query query = session.createQuery("from Users where emailId = :email and userPassword = :password");
+		query.setString("email", emailId);
+		query.setString("password", currentPassword);
+		Users currentUser = (Users) query.uniqueResult();
+		System.out.println(currentUser);
+		
+		return currentUser;
+		
+	}
+
+	@Override
+	public void updateNewPassword(Users user) {
+		
 		Session session = sessionFactory.openSession();
 		Transaction tx = session.beginTransaction();
-		session.save(blog);
+		session.update(user);
 		
 		tx.commit();
 		
+	}
+
+	@Override
+	public Users isEmailUpdated(String emailId) {
+		System.out.println("Inside DAO for is Email Update");
+		Session session = sessionFactory.openSession();
+		Query query = session.createQuery("from Users where emailId = :email");
+		query.setString("email", emailId);
+		Users newUser = (Users) query.uniqueResult();
+		System.out.println(newUser);
 		
-	}*/
+		return newUser;
+		
+	}
+
+	@Override
+	public void updatedEmail(Users newUser) {
+		
+		Session session = sessionFactory.openSession();
+		Transaction tx = session.beginTransaction();
+		session.update(newUser);
+		
+		tx.commit();
+	}
+
+	
+
 
 }

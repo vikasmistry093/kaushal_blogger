@@ -17,7 +17,7 @@
 			<div class=" pad-top-50 col-md-4"></div>
 	
 			<div class="pad-top-50 col-md-4">
-				<h1 style="color: whitesmoke; text-align: center;">Change Password</h1>
+				<h1 style="color: black; text-align: center;">Change Password</h1>
 				<br>
 				<form:form action="updatePassword" class=" border border-dark black"
 					modelAttribute="formData" onsubmit="return validatePassword()" method="GET">

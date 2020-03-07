@@ -23,7 +23,6 @@ public class BlogController<ViewBlogs> {
 
 	@Autowired
 	private BlogService blogService;
-
 	@RequestMapping(value = { "/", "/home" })
 	public ModelAndView homePage(HttpServletRequest request) {
 		ModelAndView model = new ModelAndView("home");
@@ -65,9 +64,7 @@ public class BlogController<ViewBlogs> {
 	// When sign up page is loaded
 	@RequestMapping(value = { "/signup" }, method = RequestMethod.GET)
 	public ModelAndView signUp() {
-
 		System.out.println("Sign Up page is loaded");
-
 		ModelAndView model = new ModelAndView("signup");
 		Users user = new Users();
 		model.addObject("user", user);
@@ -134,6 +131,7 @@ public class BlogController<ViewBlogs> {
 		return model;
 	}
 
+	// When Setting page is loaded
 	@RequestMapping(value = { "/setting" }, method = RequestMethod.GET)
 	public ModelAndView settingPage() {
 		System.out.println("Setting page is Loaded");
@@ -149,9 +147,9 @@ public class BlogController<ViewBlogs> {
 		return model;
 	}
 
-	@RequestMapping("/errors")
+	@RequestMapping(value = { "/errorPage" }, method = RequestMethod.GET)
 	public ModelAndView errorPage() {
-		ModelAndView model = new ModelAndView("error");
+		ModelAndView model = new ModelAndView("errorPage");
 		return model;
 	}
 
@@ -160,6 +158,7 @@ public class BlogController<ViewBlogs> {
 		return "forgotpassword";
 	}
 
+	// When Successfully posted your blog  page is loaded
 	@RequestMapping("/blog_success")
 	public ModelAndView blog_successpage() {
 		ModelAndView model = new ModelAndView("blog_success");
@@ -178,13 +177,7 @@ public class BlogController<ViewBlogs> {
 		return model;
 	}
 
-	@RequestMapping("/changeemail")
-	public ModelAndView changeemailpage() {
-		ModelAndView model = new ModelAndView("changeemail");
-
-		return model;
-	}
-
+	// When Change Password page is loaded
 	@RequestMapping(value = { "/changepassword" }, method = RequestMethod.GET)
 	public ModelAndView changepasswordpage() {
 
@@ -194,19 +187,66 @@ public class BlogController<ViewBlogs> {
 		model.addObject("formData", formData);
 		return model;
 	}
+	
+	//When Change Password Success page is loaded
+	@RequestMapping(value = { "/changePsswdSucces" }, method = RequestMethod.GET)
+	public ModelAndView changePsswdSucces() {
+		System.out.println("Change Password Success Page is loaded");
+		ModelAndView model = new ModelAndView("changePsswdSucces");
+		return model;
+	}
 
+	// When Submit is tapped on Change Password Page (To Create new password) 
 	@RequestMapping(value = { "/updatePassword" }, method = RequestMethod.GET)
 	public ModelAndView updatePassword(@ModelAttribute("formData") ModelFormData formData, HttpServletRequest request) {
 		ModelAndView model = new ModelAndView("login");
 		Users user = (Users) request.getSession().getAttribute("user");
-		
 		if (user != null) {
 			model = new ModelAndView("changepassword");
-			System.out.println("Inside change password with new password " + formData.getCurrentPassword());
-			System.out.println("Inside change password with new password " + formData.getNewPassword());
-			model.addObject("User", formData);
+			boolean isCheckCurrentPassword  = blogService.isCheckCurrentPassword(user,formData);
+			if(isCheckCurrentPassword == true) {
+				model = new ModelAndView("changePsswdSucces");
+			}else {
+				model = new ModelAndView("errorPage");
+			}
 		}
 		return model;
 	}
+	
+	// When Change Email Page is loaded
+	@RequestMapping(value = { "/changeemail" }, method = RequestMethod.GET)
+	public ModelAndView changeemailpage() {
+		System.out.println("Inside Change Email Page");
+		ModelAndView model = new ModelAndView("changeemail");
+		Users user = new Users();
+		model.addObject("user", user);
+		return model;
+	}
+	
+	//When Change Email Success Page is loaded
+	@RequestMapping(value = { "/changeEmailSucces" }, method = RequestMethod.GET)
+	public ModelAndView changeEmailSucces() {
+		System.out.println("Change Email Success Page is loaded");
+		ModelAndView model = new ModelAndView("changeEmailSucces");
+		return model;
+	}
+	
+	
+	// When Submit is tapped on Change Email Page (To Create new Email)
+	@RequestMapping(value = { "/updateEmail" }, method = RequestMethod.GET)
+	public ModelAndView updateEmail(@ModelAttribute ("user") Users newUser, HttpServletRequest request) {
+		System.out.println("updateEmail function is called");
+		
+		System.out.println(newUser.getEmailId());
+		blogService.isEmailUpdated(newUser);
+		
+		ModelAndView model =  new ModelAndView("login");
+		//blogService.newEmail(user);
+		return model;
+		
+	}
+	
+	
+
 
 }
