@@ -22,6 +22,8 @@ import com.blog.service.BlogService;
 @Service
 public class BlogServiceImpl implements BlogService {
 
+	@SuppressWarnings("unused")
+	private static final String Users = null;
 	@Autowired
 	private BlogDAO blogDAO;
 
@@ -148,24 +150,21 @@ public class BlogServiceImpl implements BlogService {
 		return false;
 	}
 
-	@SuppressWarnings("unused")
 	@Override
-	public boolean isEmailUpdated(Users newUser) {
-		System.out.println("Inside service for checkNewEmail");
+	public boolean isnewEmailUpdated(Users currentUser, Users user) {
+		System.out.println("Inside service for newEmail");
 		
-		Users newUsers = blogDAO.isEmailUpdated(newUser.getEmailId());
-		
-		if (newUser != null) {
-			newUser.setEmailId(newUser.getEmailId());
-			
-			blogDAO.updatedEmail(newUser);
+		Users userByEmail = blogDAO.getUserByEmail(user.getEmailId());
+		if(userByEmail == null) {
+			currentUser.setEmailId(user.getEmailId());
+			blogDAO.updateNewEmail(currentUser);
 			System.out.println("Email Updated");
 			return true;
-			
 		}
 		
 		return false;
 	}
 
+	
 	
 }

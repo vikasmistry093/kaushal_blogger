@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <title>MyFirstBlog | SignUp</title>
 </head>
-<%@ include file="loginheader.jsp"%>
+<%@ include file="header.jsp" %>
 
 <body background="/images/background-main27.png">
 	<div class="container-fluid">

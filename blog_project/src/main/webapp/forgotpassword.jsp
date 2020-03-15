@@ -1,52 +1,45 @@
 
 <html>
 <head>
-
-
-<link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-<link href="/css/mystyle.css" rel="stylesheet" type="text/css" />
-<script src="/js/jquery.min.js"></script>
-<script src="/js/popper.min.js"></script>
-<script src="/js/bootstrap.min.js"></script>
+<%@include file="imports.jsp"%>
 
 <meta charset="UTF-8">
 <title>MyFirstBlog | ForgotPassword</title>
 </head>
-<body background="/images/background-main20.jpg">
-	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-		<!-- Brand/logo -->
-		<img class="img-height-35" src="/images/logo/logo.jpg" />
-		<!-- <a class="navbar-brand" href="#">Blogger</a> -->
-	</nav>
+<%@ include file="loginheader.jsp"%>
+
+<body background="/images/background-main27.png">
 
 
-
-	<h1>Forgot Password</h1>
 	<br>
+
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col-md-5"></div>
-
-			<form method="post" action="">
-
-				<label>Enter New Password :</label> <input type="password"
-					class="form-control" placeholder="New Password" name="new password">
-				<br> <label>Conform New Password :</label> <input
-					type="password" class="form-control"
-					placeholder="Conform New Password" name="conform password">
-				<br>
-
-
-				<p class="form-actions">
-					<input type="submit" value="Change Password"
-						title="Change password" /> &nbsp;&nbsp;&nbsp;&nbsp;
-					<button type="button" class="btnbtn-primary ">Cancel</button>
-				</p>
-
-			</form>
-			<div class="col-md-5"></div>
+			<div class="col-md-4">
+				
 			</div>
+			<div class="pad-top-7 col-md-4">
+				<h1 style="position: inherit; left: 27px;">Account Recovery</h1>
+				<br> <br>
+				<div class="form-group">
+					<label>Email Address :</label> <input type="text"
+						class="form-control" placeholder="Enter Email" required="required" />
+				</div>
+
+				<div class="form-group">
+					<label>Contact Detail :</label> <input type="text" maxlength="10"
+						class="form-control" placeholder="Enter Mobile Number"
+						pattern="^[0-9]*$" required="required" />
+				</div>
+
+				<button type="reset" class="btn btn-primary">Reset</button>
+				<button type="submit" class="btn-float-right btn btn-primary">Submit</button>
+
 			</div>
-			
+
+			<div class="col-md-4"></div>
+		</div>
+	</div>
+
 </body>
 </html>

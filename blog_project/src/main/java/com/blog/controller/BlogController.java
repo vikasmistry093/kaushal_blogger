@@ -231,22 +231,21 @@ public class BlogController<ViewBlogs> {
 		return model;
 	}
 	
-	
 	// When Submit is tapped on Change Email Page (To Create new Email)
 	@RequestMapping(value = { "/updateEmail" }, method = RequestMethod.GET)
-	public ModelAndView updateEmail(@ModelAttribute ("user") Users newUser, HttpServletRequest request) {
-		System.out.println("updateEmail function is called");
-		
-		System.out.println(newUser.getEmailId());
-		blogService.isEmailUpdated(newUser);
-		
-		ModelAndView model =  new ModelAndView("login");
-		//blogService.newEmail(user);
+	public ModelAndView updateEmail(@ModelAttribute("user") Users user, HttpServletRequest request) {
+		ModelAndView model = new ModelAndView("login");
+		Users currentUser = (Users) request.getSession().getAttribute("user");
+		if (currentUser != null) {
+			model = new ModelAndView("changeemail");
+			boolean isnewEmailUpdated  = blogService.isnewEmailUpdated(currentUser,user);
+			if(isnewEmailUpdated == true) {
+				model = new ModelAndView("changeEmailSucces");
+			}else {
+				model = new ModelAndView("errorPage");
+			}
+		}
 		return model;
-		
 	}
 	
-	
-
-
 }

@@ -28,9 +28,11 @@ public interface BlogDAO {
 
 	public void updateNewPassword(Users user);
 
-	public Users isEmailUpdated(String emailId);
+	public Users getUserByEmail(String emailId);
 
-	public void updatedEmail(Users newUser);
+	public void updateNewEmail(Users user);
+
+	
 
 
 }

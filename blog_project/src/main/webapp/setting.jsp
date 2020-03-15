@@ -11,7 +11,7 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="pad-top-80 col-md-4">
-				<h1 style="color: whitesmoke; text-align: center;">Change Email</h1>
+				<h1 style="color: Black; text-align: center;">Change Email</h1>
 				<a href="/changeemail"> <img
 					src="${pageContext.request.contextPath}/images/logo/Change Email.png"
 					alt="HTML tutorial"
@@ -22,7 +22,7 @@
 
 			<div class="pad-top-80 col-md-4">
 
-				<h1 style="color: whitesmoke; text-align: center;">Change Password</h1>
+				<h1 style="color: Black; text-align: center;">Change Password</h1>
 				<a href="/changepassword"> <img
 					src="${pageContext.request.contextPath}/images/logo/Change Password.png"
 					style="width: 367px; height: 337px; border: 0; border-radius: 15px;">
@@ -30,7 +30,7 @@
 			</div>
 
 			<div class="pad-top-80 col-md-4">
-				<h1 style="color: whitesmoke; text-align: center;">My Blogs</h1>
+				<h1 style="color: Black; text-align: center;">My Blogs</h1>
 				<a href="#"> <img
 					src="${pageContext.request.contextPath}/images/logo/visit-my-blog.jpg"
 					alt="HTML tutorial"

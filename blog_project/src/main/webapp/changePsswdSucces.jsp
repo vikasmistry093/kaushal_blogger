@@ -17,10 +17,10 @@
 	</div>
 
 	<h3 class="success" style="position: absolute;
-    right: 292px;
+    right: 327px;
     top: 147px;
     color: Black;">
-		<b>YOU'VE SUCCESSFULLY CHANGED YOUR PASSWORD !</b>
+		<b>SUCCESSFULLY CHANGED YOUR PASSWORD !</b>
 	</h3>
 	<!-- <button class="success-login-btn btn btn-success ">Back to
 		Login</button> -->

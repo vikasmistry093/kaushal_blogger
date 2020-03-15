@@ -25,6 +25,9 @@ public interface BlogService {
 
 	public boolean isCheckCurrentPassword(Users user,ModelFormData formData);
 
-	public boolean isEmailUpdated(Users newUser);
+	public boolean isnewEmailUpdated(Users currentUser, Users user);
+
+	
+
 
 }

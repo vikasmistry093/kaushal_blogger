@@ -136,29 +136,29 @@ public class BlogDAOImpl implements BlogDAO {
 	}
 
 	@Override
-	public Users isEmailUpdated(String emailId) {
-		System.out.println("Inside DAO for is Email Update");
+	public Users getUserByEmail(String emailId) {
+		System.out.println("Inside DAO for newEmail");
 		Session session = sessionFactory.openSession();
 		Query query = session.createQuery("from Users where emailId = :email");
 		query.setString("email", emailId);
-		Users newUser = (Users) query.uniqueResult();
-		System.out.println(newUser);
+		Users userByEmail = (Users) query.uniqueResult();
+		System.out.println(userByEmail); //always should be null
 		
-		return newUser;
+		return userByEmail;
+		
 		
 	}
 
 	@Override
-	public void updatedEmail(Users newUser) {
-		
+	public void updateNewEmail(Users user) {
 		Session session = sessionFactory.openSession();
 		Transaction tx = session.beginTransaction();
-		session.update(newUser);
-		
+		session.update(user);
 		tx.commit();
+		
 	}
 
-	
+
 
 
 }
