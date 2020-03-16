@@ -32,7 +32,7 @@
 									</div>
 									<div class="col-md-9">
 										<h4>${blog.title}</h4>
-										<p class="card-text">${fn:substring(blog.description, 0, 50)}...</p>
+										<p class="card-text">${fn:substring(blog.description, 0, 75)}...</p>
 										<a href="/viewblog/${blog.blogId}" class="btn btn-primary btn-float-right">View
 											Blog</a>
 									</div>

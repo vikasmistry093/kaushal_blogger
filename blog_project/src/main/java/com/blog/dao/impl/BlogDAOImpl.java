@@ -24,7 +24,7 @@ public class BlogDAOImpl implements BlogDAO {
 	@Override
 	public List<Blogs> getAllBlogs() {
 		Session session = sessionFactory.openSession();
-		List<Blogs> list= session.createCriteria(Blogs.class).list().subList(0, 3);
+		List<Blogs> list= session.createCriteria(Blogs.class).list().subList(0, 10);
         return list;
 	}
 

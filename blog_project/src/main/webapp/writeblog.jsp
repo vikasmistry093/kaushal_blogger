@@ -14,7 +14,10 @@
 			<div class="col-md-3"></div>
 
 			<div class="col-md-6 pad-top-50">
-				<h2 style="text-align: center;">Write Your Blog</h2>
+				<h2
+					style="text-align: center; position: inherit;
+	/* top: -27px; */ bottom: 17px;">Write
+					Your Blog</h2>
 
 				<form:form action="createNewBlog" modelAttribute="WriteBlogs"
 					method="POST" enctype="multipart/form-data">
@@ -25,17 +28,22 @@
 								<form:input type="text" path="title" class="form-control"
 									placeholder="Title" required="required" />
 							</div>
-							</div>
-							
-							<div class="col-md-4">
+						</div>
+
+						<div class="col-md-4">
 							<div class="form-group">
-								<label>Category :</label> 
+								<label>Blogs Category :</label>
 								<form:select class="form-control" path="category">
-									<form:option value="food">Food</form:option>
+									<form:option value="fashion">Fashion </form:option>
+									<form:option value="food">Food </form:option>
 									<form:option value="cricket">Cricket</form:option>
 									<form:option value="photo">Photo</form:option>
-									<form:option value="adventure">Adventure</form:option>
-									<form:option value="travel">Travel</form:option>
+									<form:option value="adventure">Adventure </form:option>
+									<form:option value="travel">Travel </form:option>
+									<form:option value="music">Music </form:option>
+									<form:option value="lifestyle">Lifestyle </form:option>
+									<form:option value="diy">DIY</form:option>
+									<form:option value="fitness">Fitness</form:option>
 								</form:select>
 							</div>
 						</div>
@@ -50,10 +58,10 @@
 					</div>
 					<hr>
 
-					<form:input type="file" name="pic" path="images"/>
+					<form:input type="file" name="pic" path="images" />
 					<br>
 					<br>
-				
+
 					<button type="reset" class="btn btn-primary">Reset</button>
 					<button type="submit" class="btn btn-primary btn-float-right">Post</button>
 				</form:form>
