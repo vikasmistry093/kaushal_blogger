@@ -126,7 +126,7 @@ public class BlogController<ViewBlogs> {
 		System.out.println("createNewblog function is called");
 		ModelAndView model = new ModelAndView("writeblog");
 		blogService.createNewBlog(writeBlog);
-		model = new ModelAndView("redirect:/home");
+		model = new ModelAndView("redirect:/blogsuccess");
 
 		return model;
 	}
@@ -159,9 +159,9 @@ public class BlogController<ViewBlogs> {
 	}
 
 	// When Successfully posted your blog  page is loaded
-	@RequestMapping("/blog_success")
+	@RequestMapping("/blogsuccess")
 	public ModelAndView blog_successpage() {
-		ModelAndView model = new ModelAndView("blog_success");
+		ModelAndView model = new ModelAndView("blogsuccess");
 		Users user = new Users();
 		model.addObject("User", user);
 		return model;

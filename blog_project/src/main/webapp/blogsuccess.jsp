@@ -1,4 +1,3 @@
-
 <html>
 <head>
 <%@include file="imports.jsp"%>
