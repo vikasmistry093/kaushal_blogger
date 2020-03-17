@@ -141,18 +141,28 @@ public class BlogController<ViewBlogs> {
 		return model;
 	}
 
+	// When contact page is loaded
 	@RequestMapping("/contact")
 	public ModelAndView contactPage() {
 		ModelAndView model = new ModelAndView("contact");
 		return model;
 	}
 
+	// When Error page is loaded
 	@RequestMapping(value = { "/errorPage" }, method = RequestMethod.GET)
 	public ModelAndView errorPage() {
 		ModelAndView model = new ModelAndView("errorPage");
 		return model;
 	}
+	
+	// When User Click On Forgot Password page
+	@RequestMapping(value = { "/passwordRequest" }, method = RequestMethod.GET)
+	public ModelAndView passwordRequest() {
+		ModelAndView model = new ModelAndView("passwordRequest");
+		return model;
+	}
 
+	// When Forgot Password page is loaded
 	@RequestMapping("/forgotpassword")
 	public String forgotpasswordPage() {
 		return "forgotpassword";

@@ -29,6 +29,7 @@
 									<div class="col-md-3">
 										<img class="card-img-top rounded blogs-image"
 											src="/images/cricketers_book_bodyimage.jpg" alt="Card image">
+											<img >
 									</div>
 									<div class="col-md-9">
 										<h4>${blog.title}</h4>

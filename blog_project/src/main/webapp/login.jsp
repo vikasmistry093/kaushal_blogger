@@ -37,7 +37,7 @@
 						</label>
 					</div>
 
-					<a href="#"> Forget Password ?</a>
+					<a href="/passwordRequest"> Forget Password ?</a>
 					<br>
 					<br>
 					<button type="button" class="btn btn-primary" onclick="callSignUp()">Sign Up</button>
