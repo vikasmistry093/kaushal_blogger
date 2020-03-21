@@ -27,6 +27,12 @@ public interface BlogService {
 
 	public boolean isnewEmailUpdated(Users currentUser, Users user);
 
+	public List<Blogs> searchBlog(String query);
+
+	public List<Blogs> categoryByName(String string);
+
+	public boolean isBlogUpdated(Blogs blogToBeUpdated, WriteBlogs updatedBlog);
+
 	
 
 

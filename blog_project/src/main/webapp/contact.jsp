@@ -22,7 +22,7 @@
 
 					<div class="form-group">
 						<label><b> Name :</b></label> <input type="text"
-							class="form-control" placeholder="Enter Your Name " required>
+							class="form-control" placeholder="Enter Your Name" required>
 					</div>
 
 					<div class="form-group">
@@ -37,7 +37,7 @@
 					</div>
 
 					<br>
-
+					<button type="button" class="btn btn-primary" onclick="callHome()">Back</button>
 					<button type="submit" class="btn-float-right btn btn-primary"
 						style="position: absolute; left: 297px;">Send Message</button>
 				</form>

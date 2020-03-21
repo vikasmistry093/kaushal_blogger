@@ -24,7 +24,7 @@ public class BlogDAOImpl implements BlogDAO {
 	@Override
 	public List<Blogs> getAllBlogs() {
 		Session session = sessionFactory.openSession();
-		List<Blogs> list= session.createCriteria(Blogs.class).list().subList(0, 13);
+		List<Blogs> list= session.createCriteria(Blogs.class).list().subList(0, 6);
         return list;
 	}
 
@@ -60,6 +60,19 @@ public class BlogDAOImpl implements BlogDAO {
 		
 		tx.commit();
 	}
+	
+	@Override
+	public void isBlogUpdated(Blogs blogToBeUpdated) {
+		System.out.println("Inside DAO - update blog");
+		
+		Session session = sessionFactory.openSession();
+		Transaction tx = session.beginTransaction();
+		session.update(blogToBeUpdated);
+		
+		tx.commit();
+	}
+
+
 
 	@Override
 	public Category getCategoryByName(String categoryName) {
@@ -71,6 +84,7 @@ public class BlogDAOImpl implements BlogDAO {
 		
 		Category category = (Category) query.uniqueResult();
 		
+		session.close();
 		return category;
 		
 	}
@@ -95,6 +109,7 @@ public class BlogDAOImpl implements BlogDAO {
 		
 		Blogs blog = (Blogs) query.uniqueResult();
 		
+		session.close();
 		return blog;
 	}
 
@@ -158,6 +173,26 @@ public class BlogDAOImpl implements BlogDAO {
 		
 	}
 
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Blogs> searchBlog(String query) {
+		Session session = sessionFactory.openSession();
+		Query executableQuery = session.createQuery("from Blogs where title like :searchString or "
+				+ "category.categoryName like :searchString order by title");
+		executableQuery.setString("searchString", "%" + query + "%");
+		executableQuery.setMaxResults(3);
+		executableQuery.setFirstResult(0);
+		System.out.println("list executed in DAO and returned");
+		return executableQuery.list();
+	}
+
+	@Override
+	public List<Blogs> CategoryByName(String query) {
+		Session session = sessionFactory.openSession();
+		@SuppressWarnings("unused")
+		Query  query1 = session.createQuery("from Blogs where category.categoryName = :category");
+		return null;
+	}
 
 
 

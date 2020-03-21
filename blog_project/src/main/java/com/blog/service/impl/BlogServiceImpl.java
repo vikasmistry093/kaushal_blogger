@@ -24,6 +24,7 @@ public class BlogServiceImpl implements BlogService {
 
 	@SuppressWarnings("unused")
 	private static final String Users = null;
+	
 	@Autowired
 	private BlogDAO blogDAO;
 
@@ -71,11 +72,26 @@ public class BlogServiceImpl implements BlogService {
 		blog.setCreatedAt(timestamp);
 		blog.setUpdatedAt(timestamp);
 		
-		
-		
 		blogDAO.createNewBlog(blog);
 		
 	}
+	
+	@Override
+	public boolean isBlogUpdated(Blogs blogToBeUpdated, WriteBlogs updatedBlog) {
+
+		System.out.println("Inside Update Blog service");
+		Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+		
+		blogToBeUpdated.setCategory(getCategoryByName(updatedBlog.getCategory()));
+		blogToBeUpdated.setTitle(updatedBlog.getTitle());
+		blogToBeUpdated.setDescription(updatedBlog.getDescription());
+		blogToBeUpdated.setUpdatedAt(timestamp);
+		
+		blogDAO.isBlogUpdated(blogToBeUpdated);
+		return true;
+	}
+
+	
 
 	public List<Images> createNewImageByName(MultipartFile file) {
 		Timestamp timestamp = new Timestamp(System.currentTimeMillis());
@@ -163,6 +179,18 @@ public class BlogServiceImpl implements BlogService {
 		}
 		
 		return false;
+	}
+
+	@Override
+	public List<Blogs> searchBlog(String query) {
+		List<Blogs> blogList = blogDAO.searchBlog(query);
+		return blogList;
+	}
+
+	@Override
+	public List<Blogs> categoryByName(String string) {
+		List<Blogs> blogCategory = blogDAO.CategoryByName(string);
+		return  blogCategory;
 	}
 
 	

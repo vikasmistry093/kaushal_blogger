@@ -10,21 +10,23 @@
 
 					<p class="footer-links font-weight-bold">
 						<a class="text-black" href="/home">Home</a> | <a
-							class="text-black" href="#">Blog</a> | <a class="text-black"
+							class="text-black" href="/home">Blog</a> | <a class="text-black"
 							href="/contact">Contact Us</a>
+					</p>
 					<div>
 						<p style="color: orange;">+91 9870543082</p>
 					</div>
 					<div>
 						<p>
-							<a href="mailto:mistrykaushal097@gmail.com">support@MyFirstBlog.com</a>
+						<!-- href="mailto:mistrykaushal097@gmail.com" -->
+							<a href="#">support@MyFirstBlog.com</a>
 						</p>
 					</div>
 
 
 					<p class="text-light py-4 mb-4 "
 						style="font-size: large; font-weight: 100;">&copy;2019
-						Designed by Kaushal and Abhishek</p>
+						Designed by Kaushal</p>
 				</div>
 			</div>
 

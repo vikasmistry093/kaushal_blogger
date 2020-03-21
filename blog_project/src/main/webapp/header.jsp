@@ -4,9 +4,10 @@
 	<!-- Brand/logo -->
 	<a class="navbar-brand" href="/home"><img class="img-height-35"
 		src="/images/logo/logo.jpg" /></a>
-	<form class="form-inline nav-searchbar-align" action="#">
-		<input class="form-control mr-sm-2 searchbar-textfield-length"
-			type="text" placeholder="Search">
+		
+	<form class="form-inline nav-searchbar-align" action="/search">
+		<input id="searchFormInput" class="form-control mr-sm-2 searchbar-textfield-length"
+			type="text" name="searchquery" placeholder="Search">
 		<button class="btn btn-success" type="submit">Search</button>
 	</form>
 
@@ -16,8 +17,7 @@
 		<c:if test="${user != null}">
 			<li class="nav-item dropdown"><a
 				class=" nav-user-name-dropname nav-link dropdown-toggle" href="#"
-				id="navbardrop" data-toggle="dropdown"> <label class="text-info">Welcome,
-						${user.firstName}</label>
+				id="navbardrop" data-toggle="dropdown"> <label class="text-info">Welcome, ${user.firstName}</label>
 			</a>
 				<div class=" dropdown-menu">
 					<a class="dropdown-item" href="/writeblog">Write Your Blog</a> <a

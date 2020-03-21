@@ -18,10 +18,10 @@
     right: 377px;
     top: 147px;
     color: black;">
-		<b>SUCCESSFULLY POSTED YOUR BLOG</b>
+		<b>${successMsg}</b>
 	</h2>
 	
-<button class="success-login-btn btn btn-primary" onclick="location.href ='/home'" >Back to Home</button>
+<button class="success-login-btn btn btn-primary" onclick="callHome()" >Back to Home</button>
 
 
 	<div class="col-md-4"></div>

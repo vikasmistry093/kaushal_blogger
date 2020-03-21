@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.blog.model.Blogs;
@@ -21,8 +23,10 @@ import com.blog.service.BlogService;
 @Controller
 public class BlogController<ViewBlogs> {
 
+	private static final String String = null;
 	@Autowired
 	private BlogService blogService;
+	
 	@RequestMapping(value = { "/", "/home" })
 	public ModelAndView homePage(HttpServletRequest request) {
 		ModelAndView model = new ModelAndView("home");
@@ -110,12 +114,21 @@ public class BlogController<ViewBlogs> {
 	// when WriteBlog Page is loaded
 	@RequestMapping(value = { "/viewblog/{id}" }, method = RequestMethod.GET)
 	public ModelAndView viewBlogPage(@PathVariable("id") int id, HttpServletRequest request) {
-		System.out.println("View blog is loaded" + id);
+		System.out.println("View blog is loaded " + id);
+		WriteBlogs updateBlog = new WriteBlogs();
+		
+		
 		Users user = (Users) request.getSession().getAttribute("user");
 		ModelAndView model = new ModelAndView("viewblog");
 		Blogs blog = blogService.getBlogById(id);
+		updateBlog.setDescription(blog.getDescription());
+		updateBlog.setCategory(blog.getCategory().getCategoryName());
+		updateBlog.setTitle(blog.getTitle());
+		updateBlog.setUpdateBlogId(blog.getBlogId());
+
 		model.addObject("blog", blog);
 		model.addObject("user", user);
+		model.addObject("WriteBlogs",updateBlog);
 
 		return model;
 	}
@@ -128,6 +141,23 @@ public class BlogController<ViewBlogs> {
 		blogService.createNewBlog(writeBlog);
 		model = new ModelAndView("redirect:/blogsuccess");
 
+		return model;
+	}
+	
+	
+	@RequestMapping(value = { "/viewblog/updateBlog" }, method = RequestMethod.POST)
+	public ModelAndView updateBlog(@ModelAttribute("WriteBlogs") WriteBlogs updatedBlog) {
+		System.out.println("Updated Blog function is called");
+		ModelAndView model = new ModelAndView("home");
+		
+		Blogs blogToBeUpdated = blogService.getBlogById((int)updatedBlog.getUpdateBlogId());
+		boolean isBlogUpdated = blogService.isBlogUpdated(blogToBeUpdated, updatedBlog);
+		
+		if(isBlogUpdated == true) {
+			String successMsg = "SUCCESSFULLY UPDATED YOUR BLOG";
+			model = new ModelAndView("blogsuccess");
+			model.addObject("successMsg", successMsg);
+		}
 		return model;
 	}
 
@@ -255,6 +285,32 @@ public class BlogController<ViewBlogs> {
 				model = new ModelAndView("errorPage");
 			}
 		}
+		return model;
+	}
+	
+	@RequestMapping (value = { "/search" })
+	public ModelAndView search (@RequestParam("searchquery") String query, HttpServletRequest request) {
+		System.out.println("Inside search controller");
+		ModelAndView model = new ModelAndView("home");
+		Users user = (Users) request.getSession().getAttribute("user");
+		
+		System.out.println(user);
+		List<Blogs> blogList = blogService.searchBlog(query);
+		
+		System.out.println(blogList);
+		if(user != null)
+			model.addObject("user", user);
+		
+		model.addObject("blogs", blogList);
+		
+		return model;
+	}
+	
+	@RequestMapping (value = { "/category" }, method = RequestMethod.GET)
+	public ModelAndView category() {
+		ModelAndView model = new ModelAndView("home");
+		@SuppressWarnings("unused")
+		List<Blogs> blogCategory = blogService.categoryByName(String);
 		return model;
 	}
 	

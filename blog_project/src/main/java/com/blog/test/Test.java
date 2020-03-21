@@ -1,14 +1,27 @@
 package com.blog.test;
 
+import java.util.Properties;
+
+import org.springframework.mail.javamail.JavaMailSenderImpl;
+
 public class Test {
 
 	public static void main(String[] args) {
-		/*
-		 * int size = 5; String a[] = new String[size]; a[0] = "Akash"; a[1] = "Vikas";
-		 * a[2] = "Komal"; a[3] = "Nandini"; a[4] = "Aditi"; for (String string : a) {
-		 * System.out.println("Name = " +string); }
-		 */
 		
+		JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
+	    mailSender.setHost("smtp.gmail.com");
+	    mailSender.setPort(587);
+	     
+	    mailSender.setUsername("my.gmail@gmail.com");
+	    mailSender.setPassword("password");
+	     
+	    Properties props = mailSender.getJavaMailProperties();
+	    props.put("mail.transport.protocol", "smtp");
+	    props.put("mail.smtp.auth", "true");
+	    props.put("mail.smtp.starttls.enable", "true");
+	    props.put("mail.debug", "true");
+	     
+	   // return mailSender;
 	}
 
 }

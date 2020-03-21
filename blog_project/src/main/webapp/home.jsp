@@ -33,7 +33,7 @@
 									</div>
 									<div class="col-md-9">
 										<h4>${blog.title}</h4>
-										<p class="card-text">${fn:substring(blog.description, 0, 75)}...</p>
+										<p class="card-text">${fn:substring(blog.description, 0, 50)}...</p>
 										<a href="/viewblog/${blog.blogId}" class="btn btn-primary btn-float-right">View
 											Blog</a>
 									</div>
@@ -41,11 +41,13 @@
 							</div>
 						</div>
 						<br>
+					</c:forEach>
 						<!--....................PREVIOUS AND NEXT BUTTON..................-->
 						<a href="#" class=" previous-home-button previous round">&#8249;</a>
 						<a href="#" class=" next-home-button next round">&#8250;</a>
 						<!--....................PREVIOUS AND NEXT BUTTON..................-->
-					</c:forEach>
+						<br>
+						<br>
 				</c:if>
 			</div>
 			<div class="col-md-3 pad-top-50">
@@ -53,10 +55,7 @@
 			</div>
 		</div>
 	</div>
-	<br>
-
-	<%@include file="footer.jsp" %>
-
-
 </body>
+
+<%@include file="footer.jsp" %>
 </html>
