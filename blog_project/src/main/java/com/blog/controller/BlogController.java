@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.blog.model.Blogs;
@@ -23,6 +22,7 @@ import com.blog.service.BlogService;
 @Controller
 public class BlogController<ViewBlogs> {
 
+	private static int pageNumber = 0;
 	private static final String String = null;
 	@Autowired
 	private BlogService blogService;
@@ -31,6 +31,8 @@ public class BlogController<ViewBlogs> {
 	public ModelAndView homePage(HttpServletRequest request) {
 		ModelAndView model = new ModelAndView("home");
 		Users user = (Users) request.getSession().getAttribute("user");
+		//set page number in session
+		request.getSession().setAttribute("pageNo", pageNumber);
 
 		List<Blogs> blogs = blogService.getAllBlogs();
 		model.addObject("user", user);
@@ -303,6 +305,54 @@ public class BlogController<ViewBlogs> {
 		
 		model.addObject("blogs", blogList);
 		
+		return model;
+	}
+	
+	
+	@RequestMapping(value = {"/nextpage"})
+	public ModelAndView nextpage(HttpServletRequest request) {
+		ModelAndView model = new ModelAndView("home");
+		Users user = (Users) request.getSession().getAttribute("user");
+		
+		pageNumber ++;
+		request.getSession().setAttribute("pageNo", pageNumber);
+		
+		int currentPage = (Integer) request.getSession().getAttribute("pageNo");
+		
+		List<Blogs> blogs = blogService.getNextPageBlogs(currentPage);
+		
+		System.out.println("Counts of blogs = "+blogs.size());
+		model.addObject("user", user);
+		model.addObject("blogs", blogs);
+		
+		
+		
+		System.out.println("Inside Next page " + currentPage);
+		System.out.println("New Page NUmnber = " + request.getSession().getAttribute("pageNo"));
+		return model;
+	}
+	
+	@RequestMapping(value = {"/previouspage"})
+	public ModelAndView previouspage(HttpServletRequest request) {
+		ModelAndView model = new ModelAndView("home");
+		Users user = (Users) request.getSession().getAttribute("user");
+		model.addObject("user", user);
+		int currentPage = (Integer) request.getSession().getAttribute("pageNo");
+		
+		if(currentPage > 0) {			
+		pageNumber --;
+		request.getSession().setAttribute("pageNo", pageNumber);
+		
+		List<Blogs> blogs = blogService.getPreviousPageBlogs(currentPage);
+		System.out.println("Counts of blogs = "+blogs.size());
+		model.addObject("blogs", blogs);
+		
+		System.out.println("Inside Next page " + currentPage);
+		System.out.println("New Page NUmnber = " + request.getSession().getAttribute("pageNo"));
+		}else {
+			List<Blogs> blogs = blogService.getAllBlogs();
+			model.addObject("blogs", blogs);
+		}
 		return model;
 	}
 	

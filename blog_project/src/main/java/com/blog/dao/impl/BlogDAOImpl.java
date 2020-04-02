@@ -194,6 +194,21 @@ public class BlogDAOImpl implements BlogDAO {
 		return null;
 	}
 
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Blogs> getBlogsByPageNo(int startPoint) {
+		System.out.println("Inside DAO : start point = "+ startPoint);
+		Session session = sessionFactory.openSession();
+		Query nextPageQuery = session.createQuery("from Blogs order by blogId");
+		nextPageQuery.setMaxResults(6);
+		nextPageQuery.setFirstResult(startPoint);
+		
+        return nextPageQuery.list();
+	}
 
+	/*
+	 * SELECT contact_id, last_name, first_name FROM contacts WHERE website =
+	 * 'TechOnTheNet.com' ORDER BY contact_id DESC LIMIT 5 OFFSET 2;
+	 */
 
 }

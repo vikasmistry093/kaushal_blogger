@@ -193,6 +193,18 @@ public class BlogServiceImpl implements BlogService {
 		return  blogCategory;
 	}
 
+	@Override
+	public List<Blogs> getNextPageBlogs(int currentPage) {
+		int startPoint = (currentPage * 6);
+		return blogDAO.getBlogsByPageNo(startPoint);
+	}
+
+	@Override
+	public List<Blogs> getPreviousPageBlogs(int currentPage) {
+		int startPoint = ((currentPage - 1) * 6);
+		return blogDAO.getBlogsByPageNo(startPoint);
+	}
+
 	
 	
 }

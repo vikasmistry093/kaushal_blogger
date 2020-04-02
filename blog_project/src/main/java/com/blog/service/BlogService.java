@@ -33,6 +33,10 @@ public interface BlogService {
 
 	public boolean isBlogUpdated(Blogs blogToBeUpdated, WriteBlogs updatedBlog);
 
+	public List<Blogs> getNextPageBlogs(int currentPage);
+
+	public List<Blogs> getPreviousPageBlogs(int currentPage);
+
 	
 
 

@@ -38,6 +38,8 @@ public interface BlogDAO {
 
 	public void isBlogUpdated(Blogs blogToBeUpdated);
 
+	public List<Blogs> getBlogsByPageNo(int startPoint);
+
 	
 
 
